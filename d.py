@@ -13,7 +13,7 @@ import os
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv("uu.csv")
+        df = pd.read_csv("uu_preprocessed_analysis.csv")
         if df.empty:
             st.error("The CSV file is empty!")
             return pd.DataFrame()
@@ -25,7 +25,7 @@ def load_data():
 
         return df
     except FileNotFoundError:
-        st.error("CSV file 'uu.csv' not found!")
+        st.error("CSV file 'uu_preprocessed_analysis.csv' not found!")
         return pd.DataFrame()
     except pd.errors.EmptyDataError:
         st.error("The CSV file is empty or corrupted!")
